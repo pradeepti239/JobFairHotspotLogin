@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('images/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* overflow: hidden; */
+}
+
+.desktop_view .header {
+    height: 50vh;
+}
+
+.mobile_view .header {
+    height: 35vh;
+}
+
+/* for card */
+.mobile_view .class_card {
+    margin-top: 5vh;
+}
+
+.class_card {
+    border: 0;
+}
+
+.card-body .card_title {
+    color: #0f5288;
+    font-weight: 700;
+}
+
+.desktop_view .jflogo {
+    height: 5rem;
+    width: auto;
+}
+
+.mobile_view .jflogo {
+    height: 3rem;
+    width: auto;
+    margin-top: 2%;
+}
+
+input[type='text']::placeholder, input[type='password']::placeholder {
+    text-align: center;
+    font-size: 0.8;
+}
+
+input[type='text'], input[type='password'] {
+    border: 0;
+    border-bottom: 1px solid gray;
+    opacity: 0.85;
+    line-height: 5vh;
+}
+
+.submit_btn {
+    background-color: #0f5288;
+    color: white;
+    font-size: 0.8em;
+}
+
+/* for popup */
+.popup {
+    width: 42vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 20;
+}
+
+.close {
+    color: #000;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 10;
+
+}
+
+.desktop_view {
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+.mobile_view {
+    display: none;
+}
+
+.desktop_view {
+    display: none;
+}
+
+
+@media(min-width:991px) {
+    .mobile_view {
+        display: none;
+    }
+    
+    .desktop_view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* d-flex align-items-center justify-content-center */
+    }
+}
+
+@media(max-width:991px) {
+    .popup {
+        top: 30%;
+        width: 100%;
+    }
+
+    .mobile_view {
+        display: block;
+    }
+
+    .desktop_view {
+        display: none;
+    }
+
+    .close {
+        top: 5px;
+        width: 10px;
+        height: 10px;
+    }
+}
