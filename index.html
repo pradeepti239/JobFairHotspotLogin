@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,15 +13,148 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/aaceea354f.js" crossorigin="anonymous"></script>
 
-    <!-- Custom file -->
-    <link rel="stylesheet" href="styles.css">
-
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <title>Job Fair Login</title>
+    <title>DWIT Hotspot - Login </title>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0 auto;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-image: url('images/bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .desktop_view .header {
+            height: 50vh;
+        }
+
+        .mobile_view .header {
+            height: 35vh;
+        }
+
+        /* for card */
+        .mobile_view .class_card {
+            margin-top: 5vh;
+        }
+
+        .class_card {
+            border: 0;
+        }
+
+        .card-body .card_title {
+            color: #0f5288;
+            font-weight: 700;
+        }
+
+        .desktop_view .jflogo {
+            height: 5rem;
+            width: auto;
+        }
+
+        .mobile_view .jflogo {
+            height: 3rem;
+            width: auto;
+            margin-top: 2%;
+        }
+
+        input[type='text']::placeholder, input[type='password']::placeholder {
+            text-align: center;
+            font-size: 0.8;
+        }
+
+        input[type='text'], input[type='password'] {
+            border: 0;
+            border-bottom: 1px solid gray;
+            opacity: 0.85;
+            line-height: 5vh;
+        }
+
+        .submit_btn {
+            background-color: #0f5288;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        /* for popup */
+        .popup {
+            width: 42vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 20;
+        }
+
+        .close {
+            color: #000;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 10;
+
+        }
+
+        .desktop_view {
+            margin: 0 auto;
+            margin-top: 20vh;
+        }
+
+        .mobile_view {
+            display: none;
+        }
+
+        .desktop_view {
+            display: none;
+        }
+
+
+        @media(min-width:991px) {
+            .mobile_view {
+                display: none;
+            }
+            
+            .desktop_view {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media(max-width:991px) {
+            .popup {
+                top: 30%;
+                width: 100%;
+            }
+
+            .mobile_view {
+                display: block;
+            }
+
+            .desktop_view {
+                display: none;
+            }
+
+            .close {
+                top: 5px;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -64,12 +197,14 @@
                     <div class="card-body">
                         <h3 class="card_title card-title mb-3 text-uppercase">
                             DWIT Job Fair 2022</h3>
-                        <form class="d-flex flex-column justify-content-around align-items-center">
+                        <form action="%%AUTH_POST_URL%%" method="POST" class="d-flex flex-column justify-content-around align-items-center">
+                            <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%">
+                            <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%">
                             <div style="margin-top:1rem;">
-                                <input type="text" placeholder="Username">
+                                <input name="%%USERNAMEID%%" type="text" placeholder="Username" autocorrect="off" autocapitalize="off">
                             </div>
                             <div style="margin-top:2.5rem;">
-                                <input type="password" placeholder="Password">
+                                <input name="%%PASSWORDID%%" type="password" autocomplete="off" placeholder="Password">
                             </div>
                             <div style="margin-top:2.5rem;">
                                 <button type="submit" class="btn submit_btn btn-sm">Submit</button>
